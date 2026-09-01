@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { CONTACT } from "@/lib/contact";
 
 export function SiteFooter() {
   return (
@@ -51,44 +52,38 @@ export function SiteFooter() {
             <li className="flex gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
               <span>
-                Subotička 15/10, Zvezdara
+                {CONTACT.addressStreet}
                 <br />
-                11000 Beograd
+                {CONTACT.addressCity}
               </span>
             </li>
             <li className="flex gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
               <span>
-                Sedište klanice: Pere Ninkovića bb
+                Sedište klanice: {CONTACT.slaughterhouse}
                 <br />
-                Stara Pazova
+                {CONTACT.slaughterhouseCity}
               </span>
             </li>
             <li className="flex gap-3">
               <Phone className="mt-0.5 size-4 shrink-0 text-primary" />
-              {/* Placeholder telefon */}
-              <a href="tel:+381000000000" className="hover:text-primary">
-                +381 (0)11 000 0000
-              </a>
-            </li>
-            <li className="flex gap-3">
-              <Mail className="mt-0.5 size-4 shrink-0 text-primary" />
-              {/* Placeholder email */}
-              <a href="mailto:info@bodumex.rs" className="hover:text-primary">
-                info@bodumex.rs
+              <a href={CONTACT.phoneHref} className="hover:text-primary">
+                {CONTACT.phoneDisplay}
               </a>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="gold-rule" />
+      <div className="accent-rule" />
 
       <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
         <p>
           © {new Date().getFullYear()} BODUMEX DOO. Sva prava zadržana.
         </p>
-        <p>PIB: 100034683 · MB: 07805713</p>
+        <p>
+          PIB: {CONTACT.pib} · MB: {CONTACT.maticniBroj}
+        </p>
       </div>
     </footer>
   );

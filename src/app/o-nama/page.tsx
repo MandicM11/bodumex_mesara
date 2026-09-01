@@ -7,6 +7,7 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "O nama",
@@ -21,11 +22,19 @@ const COMPANY_INFO = [
     value:
       "Proizvodnja, unutrašnja i spoljna trgovina i usluge — nespecijalizovana trgovina na veliko",
   },
+  { label: "Šifra delatnosti", value: CONTACT.sifraDelatnosti },
   { label: "Registrovano", value: "1992. godine" },
-  { label: "Sedište firme", value: "Subotička 15/10, Zvezdara, Beograd" },
-  { label: "Sedište klanice", value: "Pere Ninkovića bb, Stara Pazova" },
-  { label: "PIB", value: "100034683" },
-  { label: "Matični broj", value: "07805713" },
+  {
+    label: "Sedište firme",
+    value: `${CONTACT.addressStreet}, ${CONTACT.addressCity}`,
+  },
+  {
+    label: "Sedište klanice",
+    value: `${CONTACT.slaughterhouse}, ${CONTACT.slaughterhouseCity}`,
+  },
+  { label: "PIB", value: CONTACT.pib },
+  { label: "Matični broj", value: CONTACT.maticniBroj },
+  { label: "Tekući račun", value: CONTACT.tekuciRacun },
 ];
 
 const PARTNERS = ["DIS", "Univerexport", "Fortuna"];

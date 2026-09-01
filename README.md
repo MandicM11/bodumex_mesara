@@ -30,16 +30,22 @@ Otvorite [http://localhost:3000](http://localhost:3000).
 
 ## Šta treba dopuniti
 
-- **Logo** — trenutno je postavljen tekstualni monogram
-  (`src/components/logo.tsx`). Kada stigne pravi logo fajl, sačuvati ga u
-  `public/logo.png` i zameniti monogram sa `<Image src="/logo.png" ... />`.
-- **Telefon i email** — trenutno su placeholder vrednosti
-  (`+381 (0)11 000 0000`, `info@bodumex.rs`) u `site-header.tsx`,
-  `site-footer.tsx` i `kontakt/page.tsx`. Zameniti stvarnim podacima.
+- **Logo** — wordmark "BoduMex" je rekreiran u kodu (rukopisni font
+  Kaushan Script + rust boja, po uzoru na pravi logo) u
+  `src/components/logo.tsx`. Pravi logo fajl (ilustracija krave, kružna
+  nalepnica) treba dodati kao stvarnu sliku — sačuvati ga u
+  `public/logo.png` i po potrebi dodati `<Image src="/logo.png" ... />`
+  pored ili umesto tekstualnog wordmark-a.
+- **Kontakt podaci** — telefon, adrese, PIB, MB, šifra delatnosti i
+  tekući račun su centralizovani u `src/lib/contact.ts` (preuzeti sa
+  zvaničnog cenovnika/memoranduma firme). Email adresa firme još nije
+  dostupna — dodati je u `contact.ts` kada bude poznata.
 - **Slanje kontakt forme** — forma šalje POST na `/api/contact`
   (`src/app/api/contact/route.ts`), koji trenutno samo loguje upit na
   serveru. Potrebno je povezati slanje email-a (npr. Resend ili
   Nodemailer + SMTP) kada budu dostupni pravi podaci/API ključevi.
+- **Cenovnik** — cene u `src/app/ponuda/page.tsx` su preuzete sa
+  zvaničnog cenovnika firme; ažurirati ih tu kada se promene.
 - **Galerija** — `src/app/galerija/page.tsx` sadrži prazne placeholder
   kartice koje treba zameniti stvarnim fotografijama.
 

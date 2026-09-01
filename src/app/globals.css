@@ -6,7 +6,7 @@
 :root {
   --radius: 0.2rem;
 
-  /* Elegantna crno-zlatna paleta */
+  /* Elegantna crno-rust paleta — rust ton preuzet sa BoduMex loga */
   --background: #0a0908;
   --foreground: #f2ede4;
 
@@ -16,8 +16,8 @@
   --popover: #131110;
   --popover-foreground: #f2ede4;
 
-  --primary: #c9a24a;
-  --primary-foreground: #0a0908;
+  --primary: #c1592a;
+  --primary-foreground: #f9f4ea;
 
   --secondary: #1c1917;
   --secondary-foreground: #f2ede4;
@@ -26,14 +26,14 @@
   --muted-foreground: #a89f8e;
 
   --accent: #1c1712;
-  --accent-foreground: #c9a24a;
+  --accent-foreground: #d97b46;
 
-  --destructive: #b3432b;
+  --destructive: #b3261e;
   --destructive-foreground: #f2ede4;
 
   --border: #2a2521;
   --input: #2a2521;
-  --ring: #c9a24a;
+  --ring: #c1592a;
 }
 
 @theme inline {
@@ -64,6 +64,7 @@
 
   --font-sans: var(--font-body);
   --font-serif: var(--font-heading);
+  --font-script: var(--font-brand);
 }
 
 body {
@@ -82,8 +83,8 @@ body {
   }
 }
 
-/* Fina zlatna linija - koristi se kao dekorativni razdvajac */
-.gold-rule {
+/* Fina akcentna linija - koristi se kao dekorativni razdvajac */
+.accent-rule {
   height: 1px;
   background: linear-gradient(
     to right,
