@@ -8,7 +8,7 @@ export function SiteFooter() {
     <footer className="border-t border-border/70 bg-card">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-2">
-          <Logo />
+          <Logo imageClassName="h-20 w-20" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
             BODUMEX DOO — preduzeće za proizvodnju, unutrašnju i spoljnu
             trgovinu i usluge. Na tržištu od 1992. godine. Veleprodaja i

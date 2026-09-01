@@ -1,25 +1,36 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 /**
- * Wordmark rekreiran po uzoru na pravi BoduMex logo (rukopisni font +
- * rust/narandžasta boja). Kada firma pošalje pravi logo fajl (npr. sa
- * ilustracijom krave i kružnom nalepnicom), može se dodati kao:
- *   <Image src="/logo.png" alt="BoduMex" width={..} height={..} />
- * uz zadržavanje ili uklanjanje ovog tekstualnog wordmark-a.
+ * Pravi BoduMex logo (kružna nalepnica sa ilustracijom krave i farme),
+ * isečen na providnu pozadinu iz izvornog public/logobodux.jpg —
+ * obrada opisana u scripts/process-logo.mjs (pokrenuti ponovo ako
+ * stigne novi izvorni fajl).
  */
-export function Logo({ className }: { className?: string }) {
+export function Logo({
+  className,
+  imageClassName,
+}: {
+  className?: string;
+  imageClassName?: string;
+}) {
   return (
     <Link
       href="/"
-      className={cn("group flex flex-col leading-none shrink-0", className)}
+      className={cn("group flex items-center gap-3 shrink-0", className)}
     >
-      <span className="font-script text-3xl text-primary transition-opacity group-hover:opacity-80">
-        BoduMex
-      </span>
-      <span className="mt-0.5 text-[10px] tracking-[0.3em] text-muted-foreground uppercase">
-        Osnovano 1992.
-      </span>
+      <Image
+        src="/logo.png"
+        alt="BoduMex — sveže domaće meso"
+        width={1024}
+        height={1024}
+        priority
+        className={cn(
+          "h-14 w-14 shrink-0 object-contain transition-transform group-hover:scale-105",
+          imageClassName
+        )}
+      />
     </Link>
   );
 }
