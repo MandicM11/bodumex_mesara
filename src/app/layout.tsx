@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Jost } from "next/font/google";
+import { Playfair_Display, Jost, Kaushan_Script } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -14,6 +14,14 @@ const body = Jost({
   variable: "--font-body",
   subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "500", "600"],
+});
+
+// Rukopisni brend font — koristi se samo za "BoduMex" logotip,
+// po uzoru na stil pravog loga firme.
+const script = Kaushan_Script({
+  variable: "--font-brand",
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="sr"
-      className={`${heading.variable} ${body.variable} h-full antialiased`}
+      className={`${heading.variable} ${body.variable} ${script.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <SiteHeader />

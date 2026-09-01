@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { Card, CardContent } from "@/components/ui/card";
+import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -47,9 +48,9 @@ export default function KontaktPage() {
                       Sedište firme
                     </p>
                     <p className="mt-1 text-foreground/90">
-                      Subotička 15/10, Zvezdara
+                      {CONTACT.addressStreet}
                       <br />
-                      11000 Beograd, Srbija
+                      {CONTACT.addressCity}, Srbija
                     </p>
                   </div>
                 </div>
@@ -61,9 +62,9 @@ export default function KontaktPage() {
                       Sedište klanice
                     </p>
                     <p className="mt-1 text-foreground/90">
-                      Pere Ninkovića bb
+                      {CONTACT.slaughterhouse}
                       <br />
-                      Stara Pazova, Srbija
+                      {CONTACT.slaughterhouseCity}, Srbija
                     </p>
                   </div>
                 </div>
@@ -74,28 +75,11 @@ export default function KontaktPage() {
                     <p className="text-sm uppercase tracking-[0.2em] text-primary">
                       Telefon
                     </p>
-                    {/* Placeholder telefon — zameniti stvarnim brojem */}
                     <a
-                      href="tel:+381000000000"
+                      href={CONTACT.phoneHref}
                       className="mt-1 block text-foreground/90 hover:text-primary"
                     >
-                      +381 (0)11 000 0000
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <Mail className="mt-1 size-5 shrink-0 text-primary" />
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.2em] text-primary">
-                      Email
-                    </p>
-                    {/* Placeholder email — zameniti stvarnom adresom */}
-                    <a
-                      href="mailto:info@bodumex.rs"
-                      className="mt-1 block text-foreground/90 hover:text-primary"
-                    >
-                      info@bodumex.rs
+                      {CONTACT.phoneDisplay}
                     </a>
                   </div>
                 </div>

@@ -2,30 +2,23 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 /**
- * Privremeni (placeholder) logo — monogram u zlatnom okviru.
- * Kada stigne pravi logo (fajl), zameniti sadržaj ovog linka sa:
- *   <Image src="/logo.png" alt="BODUMEX" width={..} height={..} />
- * i po potrebi ukloniti monogram ispod.
+ * Wordmark rekreiran po uzoru na pravi BoduMex logo (rukopisni font +
+ * rust/narandžasta boja). Kada firma pošalje pravi logo fajl (npr. sa
+ * ilustracijom krave i kružnom nalepnicom), može se dodati kao:
+ *   <Image src="/logo.png" alt="BoduMex" width={..} height={..} />
+ * uz zadržavanje ili uklanjanje ovog tekstualnog wordmark-a.
  */
 export function Logo({ className }: { className?: string }) {
   return (
     <Link
       href="/"
-      className={cn(
-        "group flex items-center gap-3 shrink-0",
-        className
-      )}
+      className={cn("group flex flex-col leading-none shrink-0", className)}
     >
-      <span className="flex size-10 items-center justify-center rounded-sm border border-primary/70 text-primary font-serif text-lg tracking-widest transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-        B
+      <span className="font-script text-3xl text-primary transition-opacity group-hover:opacity-80">
+        BoduMex
       </span>
-      <span className="flex flex-col leading-none">
-        <span className="font-serif text-lg tracking-[0.2em] text-foreground">
-          BODUMEX
-        </span>
-        <span className="mt-1 text-[10px] tracking-[0.3em] text-muted-foreground uppercase">
-          Sveže meso od 1992.
-        </span>
+      <span className="mt-0.5 text-[10px] tracking-[0.3em] text-muted-foreground uppercase">
+        Osnovano 1992.
       </span>
     </Link>
   );

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, Phone } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { CONTACT } from "@/lib/contact";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import {
@@ -56,12 +57,11 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-4 lg:flex">
           <a
-            href="tel:+381000000000"
+            href={CONTACT.phoneHref}
             className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
           >
             <Phone className="size-4" />
-            {/* Placeholder telefon — zameniti stvarnim brojem */}
-            +381 (0)11 000 0000
+            {CONTACT.phoneDisplay}
           </a>
           <Button asChild size="sm">
             <Link href="/kontakt">Pošaljite upit</Link>
@@ -104,11 +104,11 @@ export function SiteHeader() {
             </nav>
             <div className="mt-auto flex flex-col gap-4 border-t border-border/70 pt-6">
               <a
-                href="tel:+381000000000"
+                href={CONTACT.phoneHref}
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
               >
                 <Phone className="size-4" />
-                +381 (0)11 000 0000
+                {CONTACT.phoneDisplay}
               </a>
               <SheetClose asChild>
                 <Button asChild>
