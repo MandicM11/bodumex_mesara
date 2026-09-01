@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.2rem;
+
+  /* Elegantna crno-zlatna paleta */
+  --background: #0a0908;
+  --foreground: #f2ede4;
+
+  --card: #131110;
+  --card-foreground: #f2ede4;
+
+  --popover: #131110;
+  --popover-foreground: #f2ede4;
+
+  --primary: #c9a24a;
+  --primary-foreground: #0a0908;
+
+  --secondary: #1c1917;
+  --secondary-foreground: #f2ede4;
+
+  --muted: #17140f;
+  --muted-foreground: #a89f8e;
+
+  --accent: #1c1712;
+  --accent-foreground: #c9a24a;
+
+  --destructive: #b3432b;
+  --destructive-foreground: #f2ede4;
+
+  --border: #2a2521;
+  --input: #2a2521;
+  --ring: #c9a24a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+/* Fina zlatna linija - koristi se kao dekorativni razdvajac */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--primary) 20%,
+    var(--primary) 80%,
+    transparent
+  );
+}
+
+.text-balance {
+  text-wrap: balance;
+}
