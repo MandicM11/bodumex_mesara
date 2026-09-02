@@ -13,10 +13,10 @@ trgovinu i usluge (veleprodaja i maloprodaja mesa), izrađen u Next.js-u.
 
 ## Stranice
 
-- `/` — Landing (početna)
+- `/` — Landing (početna) — sadrži i placeholder galeriju (čeka
+  fotografije)
 - `/o-nama` — O nama
-- `/ponuda` — Ponuda (vrste mesa, veleprodaja/maloprodaja)
-- `/galerija` — Galerija (trenutno placeholder, čeka fotografije)
+- `/ponuda` — Ponuda i cenovnik
 - `/kontakt` — Kontakt forma + podaci o firmi
 
 ## Pokretanje
@@ -30,12 +30,9 @@ Otvorite [http://localhost:3000](http://localhost:3000).
 
 ## Šta treba dopuniti
 
-- **Logo** — wordmark "BoduMex" je rekreiran u kodu (rukopisni font
-  Kaushan Script + rust boja, po uzoru na pravi logo) u
-  `src/components/logo.tsx`. Pravi logo fajl (ilustracija krave, kružna
-  nalepnica) treba dodati kao stvarnu sliku — sačuvati ga u
-  `public/logo.png` i po potrebi dodati `<Image src="/logo.png" ... />`
-  pored ili umesto tekstualnog wordmark-a.
+- **Logo** — pravi logo je ubačen (`public/logo.png`, obrađen iz
+  `public/logobodux.jpg` skriptom `scripts/process-logo.mjs`). Ako
+  firma pošalje noviju verziju, pogledati `public/README-logo.txt`.
 - **Kontakt podaci** — telefon, adrese, PIB, MB, šifra delatnosti i
   tekući račun su centralizovani u `src/lib/contact.ts` (preuzeti sa
   zvaničnog cenovnika/memoranduma firme). Email adresa firme još nije
@@ -46,8 +43,9 @@ Otvorite [http://localhost:3000](http://localhost:3000).
   Nodemailer + SMTP) kada budu dostupni pravi podaci/API ključevi.
 - **Cenovnik** — cene u `src/app/ponuda/page.tsx` su preuzete sa
   zvaničnog cenovnika firme; ažurirati ih tu kada se promene.
-- **Galerija** — `src/app/galerija/page.tsx` sadrži prazne placeholder
-  kartice koje treba zameniti stvarnim fotografijama.
+- **Galerija** — placeholder sekcija na početnoj strani
+  (`src/app/page.tsx`) sadrži prazne kartice koje treba zameniti
+  stvarnim fotografijama.
 
 ## Build
 

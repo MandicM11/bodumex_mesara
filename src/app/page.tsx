@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Truck, Store, ShieldCheck, Beef } from "lucide-react";
+import { Truck, Store, ShieldCheck, Beef, ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -29,6 +30,9 @@ const HIGHLIGHTS = [
 
 const MEAT_TYPES = ["Juneće", "Teleće", "Svinjsko", "Jagnjeće"];
 
+// Placeholder galerija — slike stižu naknadno.
+const GALLERY_PLACEHOLDER_COUNT = 8;
+
 const PARTNERS = [
   "DIS",
   "Univerexport",
@@ -55,26 +59,38 @@ export default function HomePage() {
           }}
           aria-hidden
         />
-        <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <span className="text-xs uppercase tracking-[0.35em] text-primary">
-            Bodumex doo · Beograd
-          </span>
-          <h1 className="max-w-3xl font-serif text-4xl leading-tight text-balance text-foreground sm:text-5xl lg:text-6xl">
-            Sveže meso, provereno poreklo, isporučeno na vreme.
-          </h1>
-          <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Preduzeće za proizvodnju, unutrašnju i spoljnu trgovinu i usluge —
-            na tržištu od 1992. godine. Veleprodaja i maloprodaja junećeg,
-            telećeg, svinjskog i jagnjećeg mesa, sa dostavom na kućnu adresu.
-          </p>
-          <div className="mt-4 flex flex-col gap-4 sm:flex-row">
-            <Button asChild size="lg">
-              <Link href="/ponuda">Pogledajte ponudu</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href="/kontakt">Pošaljite upit</Link>
-            </Button>
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 py-24 sm:px-6 sm:py-32 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+          <div className="flex flex-col items-start gap-6">
+            <span className="text-xs uppercase tracking-[0.35em] text-primary">
+              Bodumex doo · Beograd
+            </span>
+            <h1 className="max-w-3xl font-serif text-4xl leading-tight text-balance text-foreground sm:text-5xl lg:text-6xl">
+              Sveže meso, provereno poreklo, isporučeno na vreme.
+            </h1>
+            <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Preduzeće za proizvodnju, unutrašnju i spoljnu trgovinu i usluge
+              — na tržištu od 1992. godine. Veleprodaja i maloprodaja
+              junećeg, telećeg, svinjskog i jagnjećeg mesa, sa dostavom na
+              kućnu adresu.
+            </p>
+            <div className="mt-4 flex flex-col gap-4 sm:flex-row">
+              <Button asChild size="lg">
+                <Link href="/ponuda">Pogledajte ponudu</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link href="/kontakt">Pošaljite upit</Link>
+              </Button>
+            </div>
           </div>
+
+          <Image
+            src="/logo.png"
+            alt="BoduMex — sveže domaće meso"
+            width={1024}
+            height={1024}
+            priority
+            className="w-56 shrink-0 drop-shadow-[0_0_40px_rgba(193,89,42,0.15)] sm:w-72 lg:w-80"
+          />
         </div>
       </section>
 
@@ -152,6 +168,38 @@ export default function HomePage() {
               {name}
             </span>
           ))}
+        </div>
+      </section>
+
+      {/* GALERIJA */}
+      <section className="border-t border-border/70">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <span className="text-xs uppercase tracking-[0.35em] text-primary">
+              Galerija
+            </span>
+            <h2 className="mt-3 font-serif text-3xl text-foreground sm:text-4xl">
+              Fotografije uskoro
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground">
+              Uskoro ćemo ovde objaviti fotografije naših proizvoda,
+              prostorija i tima.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {Array.from({ length: GALLERY_PLACEHOLDER_COUNT }).map((_, i) => (
+              <div
+                key={i}
+                className="flex aspect-square flex-col items-center justify-center gap-3 rounded-md border border-dashed border-border bg-background text-muted-foreground"
+              >
+                <ImageIcon className="size-8 text-primary/60" />
+                <span className="text-xs uppercase tracking-[0.2em]">
+                  Uskoro
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

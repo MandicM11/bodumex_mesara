@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Clock, ExternalLink } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { Card, CardContent } from "@/components/ui/card";
 import { CONTACT } from "@/lib/contact";
@@ -47,11 +47,16 @@ export default function KontaktPage() {
                     <p className="text-sm uppercase tracking-[0.2em] text-primary">
                       Sedište firme
                     </p>
-                    <p className="mt-1 text-foreground/90">
+                    <a
+                      href={CONTACT.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 block text-foreground/90 hover:text-primary"
+                    >
                       {CONTACT.addressStreet}
                       <br />
                       {CONTACT.addressCity}, Srbija
-                    </p>
+                    </a>
                   </div>
                 </div>
 
@@ -102,10 +107,19 @@ export default function KontaktPage() {
               <iframe
                 title="Lokacija — Subotička 15/10, Zvezdara, Beograd"
                 src="https://www.google.com/maps?q=Suboti%C4%8Dka%2015%2C%20Beograd&output=embed"
-                className="h-64 w-full grayscale invert-[0.92] contrast-[1.1]"
+                className="h-64 w-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
+              <a
+                href={CONTACT.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 border-t border-border/70 bg-card py-3 text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                Otvori u Google Maps
+                <ExternalLink className="size-4" />
+              </a>
             </div>
           </div>
         </div>

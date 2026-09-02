@@ -21,7 +21,6 @@ const NAV_LINKS = [
   { href: "/", label: "Početna" },
   { href: "/o-nama", label: "O nama" },
   { href: "/ponuda", label: "Ponuda" },
-  { href: "/galerija", label: "Galerija" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
