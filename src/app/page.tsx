@@ -7,7 +7,6 @@ import {
   Beef,
   Drumstick,
   PiggyBank,
-  PawPrint,
   ImageIcon,
   Phone,
   MapPin,
@@ -22,6 +21,7 @@ import {
 } from "@/components/ui/card";
 import { FadeIn } from "@/components/fade-in";
 import { NameChip } from "@/components/name-chip";
+import { SheepIcon } from "@/components/icons/sheep-icon";
 import { CONTACT } from "@/lib/contact";
 
 const HIGHLIGHTS = [
@@ -46,7 +46,7 @@ const MEAT_TYPES = [
   { name: "Juneće", icon: Beef },
   { name: "Teleće", icon: Drumstick },
   { name: "Svinjsko", icon: PiggyBank },
-  { name: "Jagnjeće", icon: PawPrint },
+  { name: "Jagnjeće", icon: SheepIcon },
 ];
 
 // Placeholder galerija — slike stižu naknadno.
