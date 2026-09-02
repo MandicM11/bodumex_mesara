@@ -21,6 +21,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { FadeIn } from "@/components/fade-in";
+import { NameChip } from "@/components/name-chip";
 import { CONTACT } from "@/lib/contact";
 
 const HIGHLIGHTS = [
@@ -179,14 +180,7 @@ export default function HomePage() {
         </FadeIn>
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {PARTNERS.map((name, i) => (
-            <FadeIn key={name} delayMs={i * 60}>
-              <div className="group relative flex h-full items-center justify-center rounded-lg border border-border/70 bg-card px-4 py-6 transition-transform duration-300 hover:-translate-y-1.5">
-                <div className="absolute inset-0 -z-10 rounded-lg bg-primary/25 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
-                <span className="font-serif text-lg tracking-wide text-muted-foreground transition-colors duration-300 group-hover:text-primary">
-                  {name}
-                </span>
-              </div>
-            </FadeIn>
+            <NameChip key={name} name={name} delayMs={i * 60} />
           ))}
         </div>
       </section>
