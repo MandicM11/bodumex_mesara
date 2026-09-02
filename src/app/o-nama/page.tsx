@@ -7,6 +7,8 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { FadeIn } from "@/components/fade-in";
+import { NameChip } from "@/components/name-chip";
 import { CONTACT } from "@/lib/contact";
 
 export const metadata: Metadata = {
@@ -137,42 +139,50 @@ export default function ONamaPage() {
       {/* Partneri i restorani */}
       <section className="border-t border-border/70 bg-card">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3">
-            <ScrollText className="size-6 text-primary" />
-            <span className="text-xs uppercase tracking-[0.35em] text-primary">
-              Naši klijenti
-            </span>
-          </div>
-          <h2 className="mt-3 font-serif text-3xl text-foreground sm:text-4xl">
-            Poverenje najpoznatijih imena
-          </h2>
-          <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-            Godinama snabdevamo najveće trgovinske lance i najpoznatije
-            restorane u Beogradu.
-          </p>
+          <FadeIn>
+            <div className="flex items-center gap-3">
+              <ScrollText className="size-6 text-primary" />
+              <span className="text-xs uppercase tracking-[0.35em] text-primary">
+                Naši klijenti
+              </span>
+            </div>
+            <h2 className="mt-3 font-serif text-3xl text-foreground sm:text-4xl">
+              Poverenje najpoznatijih imena
+            </h2>
+            <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+              Godinama snabdevamo najveće trgovinske lance i najpoznatije
+              restorane u Beogradu.
+            </p>
+          </FadeIn>
 
-          <div className="mt-12 grid gap-10 sm:grid-cols-2">
+          <div className="mt-12 grid gap-10 lg:grid-cols-2">
             <div>
               <h3 className="font-serif text-lg text-primary">
                 Trgovinski lanci
               </h3>
-              <ul className="mt-5 flex flex-col gap-3 text-lg text-foreground/90">
-                {PARTNERS.map((p) => (
-                  <li key={p} className="border-b border-border/60 pb-3">
-                    {p}
-                  </li>
+              <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3">
+                {PARTNERS.map((p, i) => (
+                  <NameChip
+                    key={p}
+                    name={p}
+                    delayMs={i * 140}
+                    className="bg-background"
+                  />
                 ))}
-              </ul>
+              </div>
             </div>
             <div>
               <h3 className="font-serif text-lg text-primary">Restorani</h3>
-              <ul className="mt-5 flex flex-col gap-3 text-lg text-foreground/90">
-                {RESTAURANTS.map((r) => (
-                  <li key={r} className="border-b border-border/60 pb-3">
-                    {r}
-                  </li>
+              <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3">
+                {RESTAURANTS.map((r, i) => (
+                  <NameChip
+                    key={r}
+                    name={r}
+                    delayMs={i * 140}
+                    className="bg-background"
+                  />
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </div>

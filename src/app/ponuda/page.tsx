@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Beef, Truck, Store, Flame, Info } from "lucide-react";
+import {
+  Beef,
+  Drumstick,
+  PiggyBank,
+  Truck,
+  Store,
+  Flame,
+  Info,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -62,7 +70,7 @@ export default function PonudaPage() {
   return (
     <div>
       <section className="border-b border-border/70">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.35em] text-primary">
             Ponuda i cenovnik
           </span>
@@ -77,11 +85,11 @@ export default function PonudaPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2">
-          <PriceTable icon={Beef} title="Teleće meso" items={TELECE} />
+          <PriceTable icon={Drumstick} title="Teleće meso" items={TELECE} />
           <PriceTable icon={Beef} title="Juneće meso" items={JUNECE} />
-          <PriceTable icon={Beef} title="Svinjsko meso" items={SVINJSKO} />
+          <PriceTable icon={PiggyBank} title="Svinjsko meso" items={SVINJSKO} />
           <PriceTable
             icon={Flame}
             title="Roštilj meso (čista junetina)"
@@ -89,8 +97,8 @@ export default function PonudaPage() {
           />
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 rounded-md border border-border/70 bg-card px-6 py-5 text-sm text-muted-foreground sm:flex-row sm:items-start sm:gap-4">
-          <Info className="mt-0.5 size-5 shrink-0 text-primary" />
+        <div className="mt-8 flex flex-col gap-3 rounded-md border border-border/70 bg-card px-6 py-5 text-base text-muted-foreground sm:flex-row sm:items-start sm:gap-4">
+          <Info className="mt-0.5 size-6 shrink-0 text-primary" />
           <div className="flex flex-col gap-1">
             <p>
               <span className="text-foreground/90">b/k</span> — bez kostiju ·{" "}
@@ -105,26 +113,26 @@ export default function PonudaPage() {
       </section>
 
       <section className="border-t border-border/70 bg-card">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <Card className="border-primary/30">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <Card className="border-primary/30 py-8">
             <CardHeader>
-              <Store className="mb-2 size-7 text-primary" />
-              <CardTitle>Veleprodaja</CardTitle>
+              <Store className="mb-3 size-10 text-primary" />
+              <CardTitle className="text-2xl">Veleprodaja</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription className="leading-relaxed">
+              <CardDescription className="text-base leading-relaxed">
                 Snabdevamo trgovinske lance i restorane redovnim isporukama i
                 velikim količinama mesa, prilagođeno vašim potrebama.
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="border-primary/30">
+          <Card className="border-primary/30 py-8">
             <CardHeader>
-              <Truck className="mb-2 size-7 text-primary" />
-              <CardTitle>Maloprodaja i dostava</CardTitle>
+              <Truck className="mb-3 size-10 text-primary" />
+              <CardTitle className="text-2xl">Maloprodaja i dostava</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription className="leading-relaxed">
+              <CardDescription className="text-base leading-relaxed">
                 Naručite sveže meso i dobijte ga direktno na kućnu adresu, uz
                 brzu i pouzdanu dostavu.
               </CardDescription>
@@ -132,7 +140,7 @@ export default function PonudaPage() {
           </Card>
         </div>
 
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 pb-20 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 pb-20 text-center sm:px-6 lg:px-8">
           <p className="max-w-xl text-muted-foreground">
             Za porudžbine, količine i dostupnost artikala, obratite nam se
             putem kontakt forme ili telefona.

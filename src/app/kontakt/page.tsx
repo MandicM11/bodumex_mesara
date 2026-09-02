@@ -106,7 +106,7 @@ export default function KontaktPage() {
             <div className="overflow-hidden rounded-md border border-border/70">
               <iframe
                 title="Lokacija — Subotička 15/10, Zvezdara, Beograd"
-                src="https://www.google.com/maps?q=Suboti%C4%8Dka%2015%2C%20Beograd&output=embed"
+                src={CONTACT.mapsEmbedUrl}
                 className="h-64 w-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

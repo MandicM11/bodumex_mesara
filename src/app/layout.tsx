@@ -31,10 +31,8 @@ export const metadata: Metadata = {
     "dostava mesa",
     "klanica Stara Pazova",
   ],
-  icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
-  },
+  // Favicon/apple-touch-icon se automatski generišu iz
+  // src/app/icon.png i src/app/apple-icon.png (Next.js konvencija).
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
