@@ -33,16 +33,7 @@ export function FadeIn({
       { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
     );
     observer.observe(el);
-
-    // Fallback: ako do intersekcije nikad ne dođe (npr. instant skok na
-    // deo strane preko hash linka ili obnovljena scroll pozicija), ne
-    // ostavljati sadržaj trajno nevidljivim.
-    const fallback = window.setTimeout(() => setVisible(true), 2000);
-
-    return () => {
-      observer.disconnect();
-      window.clearTimeout(fallback);
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
