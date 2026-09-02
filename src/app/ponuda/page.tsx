@@ -97,8 +97,8 @@ export default function PonudaPage() {
           />
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 rounded-md border border-border/70 bg-card px-6 py-5 text-sm text-muted-foreground sm:flex-row sm:items-start sm:gap-4">
-          <Info className="mt-0.5 size-5 shrink-0 text-primary" />
+        <div className="mt-8 flex flex-col gap-3 rounded-md border border-border/70 bg-card px-6 py-5 text-base text-muted-foreground sm:flex-row sm:items-start sm:gap-4">
+          <Info className="mt-0.5 size-6 shrink-0 text-primary" />
           <div className="flex flex-col gap-1">
             <p>
               <span className="text-foreground/90">b/k</span> — bez kostiju ·{" "}
@@ -114,25 +114,25 @@ export default function PonudaPage() {
 
       <section className="border-t border-border/70 bg-card">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <Card className="border-primary/30">
+          <Card className="border-primary/30 py-8">
             <CardHeader>
-              <Store className="mb-2 size-7 text-primary" />
-              <CardTitle>Veleprodaja</CardTitle>
+              <Store className="mb-3 size-10 text-primary" />
+              <CardTitle className="text-2xl">Veleprodaja</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription className="leading-relaxed">
+              <CardDescription className="text-base leading-relaxed">
                 Snabdevamo trgovinske lance i restorane redovnim isporukama i
                 velikim količinama mesa, prilagođeno vašim potrebama.
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="border-primary/30">
+          <Card className="border-primary/30 py-8">
             <CardHeader>
-              <Truck className="mb-2 size-7 text-primary" />
-              <CardTitle>Maloprodaja i dostava</CardTitle>
+              <Truck className="mb-3 size-10 text-primary" />
+              <CardTitle className="text-2xl">Maloprodaja i dostava</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription className="leading-relaxed">
+              <CardDescription className="text-base leading-relaxed">
                 Naručite sveže meso i dobijte ga direktno na kućnu adresu, uz
                 brzu i pouzdanu dostavu.
               </CardDescription>
