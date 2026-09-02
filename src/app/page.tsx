@@ -180,7 +180,7 @@ export default function HomePage() {
         </FadeIn>
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {PARTNERS.map((name, i) => (
-            <NameChip key={name} name={name} delayMs={i * 60} />
+            <NameChip key={name} name={name} delayMs={i * 140} />
           ))}
         </div>
       </section>

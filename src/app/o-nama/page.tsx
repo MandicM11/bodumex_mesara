@@ -165,7 +165,7 @@ export default function ONamaPage() {
                   <NameChip
                     key={p}
                     name={p}
-                    delayMs={i * 60}
+                    delayMs={i * 140}
                     className="bg-background"
                   />
                 ))}
@@ -178,7 +178,7 @@ export default function ONamaPage() {
                   <NameChip
                     key={r}
                     name={r}
-                    delayMs={i * 60}
+                    delayMs={i * 140}
                     className="bg-background"
                   />
                 ))}
