@@ -61,7 +61,7 @@ export default function HomePage() {
         />
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 py-24 sm:px-6 sm:py-32 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div className="flex flex-col items-start gap-6">
-            <span className="text-xs uppercase tracking-[0.35em] text-primary">
+            <span className="text-base font-semibold uppercase tracking-[0.35em] text-primary sm:text-lg">
               Bodumex doo · Beograd
             </span>
             <h1 className="max-w-3xl font-serif text-4xl leading-tight text-balance text-foreground sm:text-5xl lg:text-6xl">
@@ -174,29 +174,13 @@ export default function HomePage() {
       {/* GALERIJA */}
       <section className="border-t border-border/70">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <span className="text-xs uppercase tracking-[0.35em] text-primary">
-              Galerija
-            </span>
-            <h2 className="mt-3 font-serif text-3xl text-foreground sm:text-4xl">
-              Fotografije uskoro
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground">
-              Uskoro ćemo ovde objaviti fotografije naših proizvoda,
-              prostorija i tima.
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {Array.from({ length: GALLERY_PLACEHOLDER_COUNT }).map((_, i) => (
               <div
                 key={i}
-                className="flex aspect-square flex-col items-center justify-center gap-3 rounded-md border border-dashed border-border bg-background text-muted-foreground"
+                className="flex aspect-square items-center justify-center rounded-md border border-dashed border-border bg-background text-muted-foreground"
               >
                 <ImageIcon className="size-8 text-primary/60" />
-                <span className="text-xs uppercase tracking-[0.2em]">
-                  Uskoro
-                </span>
               </div>
             ))}
           </div>
