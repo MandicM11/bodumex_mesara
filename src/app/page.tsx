@@ -114,15 +114,15 @@ export default function HomePage() {
 
       {/* HIGHLIGHTS */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="grid gap-6 sm:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-3">
           {HIGHLIGHTS.map(({ icon: Icon, title, text }) => (
-            <Card key={title}>
+            <Card key={title} className="py-8">
               <CardHeader>
-                <Icon className="mb-2 size-7 text-primary" />
-                <CardTitle>{title}</CardTitle>
+                <Icon className="mb-3 size-10 text-primary" />
+                <CardTitle className="text-2xl">{title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="leading-relaxed">
+                <CardDescription className="text-base leading-relaxed">
                   {text}
                 </CardDescription>
               </CardContent>
