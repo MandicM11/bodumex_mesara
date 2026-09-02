@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Truck, Store, ShieldCheck, Beef } from "lucide-react";
+import { Truck, Store, ShieldCheck, Beef, ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -29,6 +29,9 @@ const HIGHLIGHTS = [
 ];
 
 const MEAT_TYPES = ["Juneće", "Teleće", "Svinjsko", "Jagnjeće"];
+
+// Placeholder galerija — slike stižu naknadno.
+const GALLERY_PLACEHOLDER_COUNT = 8;
 
 const PARTNERS = [
   "DIS",
@@ -165,6 +168,38 @@ export default function HomePage() {
               {name}
             </span>
           ))}
+        </div>
+      </section>
+
+      {/* GALERIJA */}
+      <section className="border-t border-border/70">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <span className="text-xs uppercase tracking-[0.35em] text-primary">
+              Galerija
+            </span>
+            <h2 className="mt-3 font-serif text-3xl text-foreground sm:text-4xl">
+              Fotografije uskoro
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground">
+              Uskoro ćemo ovde objaviti fotografije naših proizvoda,
+              prostorija i tima.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {Array.from({ length: GALLERY_PLACEHOLDER_COUNT }).map((_, i) => (
+              <div
+                key={i}
+                className="flex aspect-square flex-col items-center justify-center gap-3 rounded-md border border-dashed border-border bg-background text-muted-foreground"
+              >
+                <ImageIcon className="size-8 text-primary/60" />
+                <span className="text-xs uppercase tracking-[0.2em]">
+                  Uskoro
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

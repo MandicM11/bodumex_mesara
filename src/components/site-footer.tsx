@@ -32,11 +32,6 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/galerija" className="hover:text-primary">
-                Galerija
-              </Link>
-            </li>
-            <li>
               <Link href="/kontakt" className="hover:text-primary">
                 Kontakt
               </Link>

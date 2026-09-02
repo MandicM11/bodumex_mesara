@@ -10,4 +10,8 @@ export const CONTACT = {
   maticniBroj: "07805713",
   sifraDelatnosti: "4690",
   tekuciRacun: "265-1740310000496-17",
+  // Otvara Google Maps (aplikaciju ili sajt) sa pretragom adrese —
+  // za razliku od /maps?...&output=embed (samo za <iframe> prikaz).
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Suboti%C4%8Dka+15%2C+Beograd",
 } as const;
