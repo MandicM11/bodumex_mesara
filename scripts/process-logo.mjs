@@ -7,10 +7,13 @@
 // (ponovo pokrenuti ako firma pošalje novu/ažuriranu verziju loga —
 // samo prepisati public/logobodux.jpg i pustiti skript ponovo)
 
+import { copyFile } from "node:fs/promises";
 import sharp from "sharp";
 
 const SRC = "public/logobodux.jpg";
 const OUT = "public/logo.png";
+// Next.js konvencija — ove kopije generišu favicon/apple-touch-icon.
+const ICON_COPIES = ["src/app/icon.png", "src/app/apple-icon.png"];
 const SIZE = 1024;
 
 const r = SIZE / 2;
@@ -30,4 +33,8 @@ await sharp(SRC)
   .png()
   .toFile(OUT);
 
-console.log(`Logo obrađen: ${OUT}`);
+for (const copy of ICON_COPIES) {
+  await copyFile(OUT, copy);
+}
+
+console.log(`Logo obrađen: ${OUT} (+ ${ICON_COPIES.join(", ")})`);

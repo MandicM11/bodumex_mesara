@@ -10,8 +10,10 @@ export const CONTACT = {
   maticniBroj: "07805713",
   sifraDelatnosti: "4690",
   tekuciRacun: "265-1740310000496-17",
-  // Otvara Google Maps (aplikaciju ili sajt) sa pretragom adrese —
+  // Otvara Google Maps (aplikaciju ili sajt) sa pretragom pune adrese —
   // za razliku od /maps?...&output=embed (samo za <iframe> prikaz).
   mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Suboti%C4%8Dka+15%2C+Beograd",
+    "https://www.google.com/maps/search/?api=1&query=Suboti%C4%8Dka+15%2F10%2C+Zvezdara%2C+Beograd%2C+Srbija",
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=Suboti%C4%8Dka%2015%2F10%2C%20Zvezdara%2C%20Beograd&output=embed",
 } as const;

@@ -1,6 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Truck, Store, ShieldCheck, Beef, ImageIcon } from "lucide-react";
+import {
+  Truck,
+  Store,
+  ShieldCheck,
+  Beef,
+  Drumstick,
+  PiggyBank,
+  PawPrint,
+  ImageIcon,
+  Phone,
+  MapPin,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,6 +20,8 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { FadeIn } from "@/components/fade-in";
+import { CONTACT } from "@/lib/contact";
 
 const HIGHLIGHTS = [
   {
@@ -28,7 +41,12 @@ const HIGHLIGHTS = [
   },
 ];
 
-const MEAT_TYPES = ["Juneće", "Teleće", "Svinjsko", "Jagnjeće"];
+const MEAT_TYPES = [
+  { name: "Juneće", icon: Beef },
+  { name: "Teleće", icon: Drumstick },
+  { name: "Svinjsko", icon: PiggyBank },
+  { name: "Jagnjeće", icon: PawPrint },
+];
 
 // Placeholder galerija — slike stižu naknadno.
 const GALLERY_PLACEHOLDER_COUNT = 8;
@@ -134,14 +152,14 @@ export default function HomePage() {
             </Button>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            {MEAT_TYPES.map((type) => (
+            {MEAT_TYPES.map(({ name, icon: Icon }) => (
               <div
-                key={type}
+                key={name}
                 className="flex items-center gap-3 rounded-md border border-border/70 bg-background px-5 py-6"
               >
-                <Beef className="size-5 text-primary" />
+                <Icon className="size-5 text-primary" />
                 <span className="font-serif text-lg text-foreground">
-                  {type} meso
+                  {name} meso
                 </span>
               </div>
             ))}
@@ -151,22 +169,24 @@ export default function HomePage() {
 
       {/* PARTNERS */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="text-center">
+        <FadeIn className="text-center">
           <span className="text-xs uppercase tracking-[0.35em] text-primary">
             Poverenje
           </span>
           <h2 className="mt-3 font-serif text-3xl text-foreground sm:text-4xl">
             Naši partneri i klijenti
           </h2>
-        </div>
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-          {PARTNERS.map((name) => (
-            <span
-              key={name}
-              className="font-serif text-lg tracking-wide text-muted-foreground transition-colors hover:text-primary sm:text-xl"
-            >
-              {name}
-            </span>
+        </FadeIn>
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {PARTNERS.map((name, i) => (
+            <FadeIn key={name} delayMs={i * 60}>
+              <div className="group relative flex h-full items-center justify-center rounded-lg border border-border/70 bg-card px-4 py-6 transition-transform duration-300 hover:-translate-y-1.5">
+                <div className="absolute inset-0 -z-10 rounded-lg bg-primary/25 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+                <span className="font-serif text-lg tracking-wide text-muted-foreground transition-colors duration-300 group-hover:text-primary">
+                  {name}
+                </span>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </section>
@@ -189,17 +209,52 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="border-t border-border/70 bg-card">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-20 text-center sm:px-6 lg:px-8">
-          <h2 className="max-w-2xl font-serif text-3xl text-foreground sm:text-4xl">
-            Poručite sveže meso ili nas kontaktirajte za saradnju
-          </h2>
-          <p className="max-w-xl text-muted-foreground">
-            Bilo da ste trgovinski lanac, restoran ili domaćinstvo — tu smo za
-            vas.
-          </p>
-          <Button asChild size="lg">
-            <Link href="/kontakt">Kontaktirajte nas</Link>
-          </Button>
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+          <FadeIn className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#e08a3e] via-primary to-[#9c3a20] px-6 py-14 text-center shadow-[0_25px_70px_-20px_rgba(193,89,42,0.55)] sm:px-12 sm:py-16">
+            <div
+              className="absolute inset-0 opacity-[0.08]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)",
+                backgroundSize: "22px 22px",
+              }}
+              aria-hidden
+            />
+            <h2 className="relative font-sans text-3xl font-extrabold uppercase tracking-tight text-white sm:text-4xl">
+              Poručite sveže meso
+            </h2>
+            <p className="relative mx-auto mt-4 max-w-xl text-white/90">
+              Pozovite i poručite — sveže meso stiže direktno na vašu adresu.
+            </p>
+
+            <div className="relative mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <a
+                href={CONTACT.phoneHref}
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-primary shadow-lg transition-transform hover:-translate-y-0.5"
+              >
+                <Phone className="size-5" />
+                {CONTACT.phoneDisplay}
+              </a>
+              <Button
+                asChild
+                variant="outline"
+                className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
+              >
+                <Link href="/kontakt">Pošaljite upit</Link>
+              </Button>
+            </div>
+
+            <div className="relative mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-white/80">
+              <span className="flex items-center gap-2">
+                <MapPin className="size-4" />
+                Beograd, Srbija
+              </span>
+              <span className="flex items-center gap-2">
+                <Truck className="size-4" />
+                Dostava na kućnu adresu
+              </span>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </div>

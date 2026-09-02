@@ -27,14 +27,14 @@ export function PriceTable({
             <th className="px-6 py-3 text-right font-normal">Cena/kg</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="divide-y divide-border">
           {items.map(({ artikal, cena }, i) => (
             <tr
               key={artikal}
-              className={i % 2 === 1 ? "bg-background/40" : undefined}
+              className={i % 2 === 1 ? "bg-black/20" : undefined}
             >
-              <td className="px-6 py-3 text-foreground/90">{artikal}</td>
-              <td className="px-6 py-3 text-right font-medium text-primary whitespace-nowrap">
+              <td className="px-6 py-3.5 text-foreground/90">{artikal}</td>
+              <td className="px-6 py-3.5 text-right font-medium text-primary whitespace-nowrap">
                 {cena} RSD
               </td>
             </tr>

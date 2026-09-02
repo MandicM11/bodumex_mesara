@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Beef, Truck, Store, Flame, Info } from "lucide-react";
+import {
+  Beef,
+  Drumstick,
+  PiggyBank,
+  Truck,
+  Store,
+  Flame,
+  Info,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -62,7 +70,7 @@ export default function PonudaPage() {
   return (
     <div>
       <section className="border-b border-border/70">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-[0.35em] text-primary">
             Ponuda i cenovnik
           </span>
@@ -77,11 +85,11 @@ export default function PonudaPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2">
-          <PriceTable icon={Beef} title="Teleće meso" items={TELECE} />
+          <PriceTable icon={Drumstick} title="Teleće meso" items={TELECE} />
           <PriceTable icon={Beef} title="Juneće meso" items={JUNECE} />
-          <PriceTable icon={Beef} title="Svinjsko meso" items={SVINJSKO} />
+          <PriceTable icon={PiggyBank} title="Svinjsko meso" items={SVINJSKO} />
           <PriceTable
             icon={Flame}
             title="Roštilj meso (čista junetina)"
@@ -105,7 +113,7 @@ export default function PonudaPage() {
       </section>
 
       <section className="border-t border-border/70 bg-card">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
           <Card className="border-primary/30">
             <CardHeader>
               <Store className="mb-2 size-7 text-primary" />
@@ -132,7 +140,7 @@ export default function PonudaPage() {
           </Card>
         </div>
 
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 pb-20 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 pb-20 text-center sm:px-6 lg:px-8">
           <p className="max-w-xl text-muted-foreground">
             Za porudžbine, količine i dostupnost artikala, obratite nam se
             putem kontakt forme ili telefona.
